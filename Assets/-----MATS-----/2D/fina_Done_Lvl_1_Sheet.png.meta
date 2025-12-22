@@ -1,0 +1,1139 @@
+fileFormatVersion: 2
+guid: d0926ca66aaf9d945896239b56717540
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1581196078841012386
+    second: fina_Done_Lvl_1_Sheet_0
+  - first:
+      213: -6876290215681103793
+    second: fina_Done_Lvl_1_Sheet_1
+  - first:
+      213: 688074862369021601
+    second: fina_Done_Lvl_1_Sheet_2
+  - first:
+      213: -8351042582187091489
+    second: fina_Done_Lvl_1_Sheet_3
+  - first:
+      213: -6948293821527399034
+    second: fina_Done_Lvl_1_Sheet_4
+  - first:
+      213: -2990096812456698528
+    second: fina_Done_Lvl_1_Sheet_5
+  - first:
+      213: -4942669508885629917
+    second: fina_Done_Lvl_1_Sheet_6
+  - first:
+      213: 8256596275758548391
+    second: fina_Done_Lvl_1_Sheet_7
+  - first:
+      213: 1766199348480644908
+    second: fina_Done_Lvl_1_Sheet_8
+  - first:
+      213: -7377530758088594813
+    second: fina_Done_Lvl_1_Sheet_9
+  - first:
+      213: -8458625709508564078
+    second: fina_Done_Lvl_1_Sheet_10
+  - first:
+      213: -7184619151578391364
+    second: fina_Done_Lvl_1_Sheet_11
+  - first:
+      213: 1914701793640930801
+    second: fina_Done_Lvl_1_Sheet_12
+  - first:
+      213: 4818402948079637492
+    second: fina_Done_Lvl_1_Sheet_13
+  - first:
+      213: -1165019299058959857
+    second: fina_Done_Lvl_1_Sheet_14
+  - first:
+      213: -6485789865975869619
+    second: fina_Done_Lvl_1_Sheet_15
+  - first:
+      213: -7003310454442815567
+    second: fina_Done_Lvl_1_Sheet_16
+  - first:
+      213: -2536286757527995783
+    second: fina_Done_Lvl_1_Sheet_17
+  - first:
+      213: 1744835123247007380
+    second: fina_Done_Lvl_1_Sheet_18
+  - first:
+      213: -1165854571740200626
+    second: fina_Done_Lvl_1_Sheet_19
+  - first:
+      213: 609334695411965273
+    second: fina_Done_Lvl_1_Sheet_20
+  - first:
+      213: -5237935794024230726
+    second: fina_Done_Lvl_1_Sheet_21
+  - first:
+      213: 4404576919330854728
+    second: fina_Done_Lvl_1_Sheet_22
+  - first:
+      213: -1512178702317785006
+    second: fina_Done_Lvl_1_Sheet_23
+  - first:
+      213: -3534259166875067879
+    second: fina_Done_Lvl_1_Sheet_24
+  - first:
+      213: -3612842478364867358
+    second: fina_Done_Lvl_1_Sheet_25
+  - first:
+      213: -2901990687856738410
+    second: fina_Done_Lvl_1_Sheet_26
+  - first:
+      213: 3389829593670979102
+    second: fina_Done_Lvl_1_Sheet_27
+  - first:
+      213: -8684035544459327193
+    second: fina_Done_Lvl_1_Sheet_28
+  - first:
+      213: -3859430976095813380
+    second: fina_Done_Lvl_1_Sheet_29
+  - first:
+      213: -456444370282211451
+    second: fina_Done_Lvl_1_Sheet_30
+  - first:
+      213: 586556033965732229
+    second: fina_Done_Lvl_1_Sheet_31
+  - first:
+      213: 1301753402940497528
+    second: fina_Done_Lvl_1_Sheet_32
+  - first:
+      213: -5196242232815286355
+    second: fina_Done_Lvl_1_Sheet_33
+  - first:
+      213: -5702480748355976365
+    second: fina_Done_Lvl_1_Sheet_34
+  - first:
+      213: -5688896842406453939
+    second: fina_Done_Lvl_1_Sheet_35
+  - first:
+      213: -401445384983604930
+    second: fina_Done_Lvl_1_Sheet_36
+  - first:
+      213: -2812382462167635007
+    second: fina_Done_Lvl_1_Sheet_37
+  - first:
+      213: 3869538897543456910
+    second: fina_Done_Lvl_1_Sheet_38
+  - first:
+      213: -4369504318594934275
+    second: fina_Done_Lvl_1_Sheet_39
+  - first:
+      213: -6752762009922053143
+    second: fina_Done_Lvl_1_Sheet_40
+  - first:
+      213: -2942451078282126541
+    second: fina_Done_Lvl_1_Sheet_41
+  - first:
+      213: 3198124917154386060
+    second: fina_Done_Lvl_1_Sheet_42
+  - first:
+      213: -1503471529177304035
+    second: fina_Done_Lvl_1_Sheet_43
+  - first:
+      213: -7937671376110931276
+    second: fina_Done_Lvl_1_Sheet_44
+  - first:
+      213: 128206028092002053
+    second: fina_Done_Lvl_1_Sheet_45
+  - first:
+      213: -5167329746247904786
+    second: fina_Done_Lvl_1_Sheet_46
+  - first:
+      213: -8334917514801738370
+    second: fina_Done_Lvl_1_Sheet_47
+  - first:
+      213: -3217266219403278557
+    second: fina_Done_Lvl_1_Sheet_48
+  - first:
+      213: 2324764438111967053
+    second: fina_Done_Lvl_1_Sheet_49
+  - first:
+      213: -3948710147505820578
+    second: fina_Done_Lvl_1_Sheet_50
+  - first:
+      213: -7196852262996773811
+    second: fina_Done_Lvl_1_Sheet_51
+  - first:
+      213: -1787208429825709457
+    second: fina_Done_Lvl_1_Sheet_52
+  - first:
+      213: -4435189744125516922
+    second: fina_Done_Lvl_1_Sheet_53
+  - first:
+      213: 7813155259718582635
+    second: fina_Done_Lvl_1_Sheet_54
+  - first:
+      213: -5488796158077616698
+    second: fina_Done_Lvl_1_Sheet_55
+  - first:
+      213: 3076419193471823863
+    second: fina_Done_Lvl_1_Sheet_56
+  - first:
+      213: -3008144099453775945
+    second: fina_Done_Lvl_1_Sheet_57
+  - first:
+      213: -8857075079950794429
+    second: fina_Done_Lvl_1_Sheet_58
+  - first:
+      213: 3703140430687565373
+    second: fina_Done_Lvl_1_Sheet_59
+  - first:
+      213: 1340805026050603177
+    second: fina_Done_Lvl_1_Sheet_60
+  - first:
+      213: 2961103108028271287
+    second: fina_Done_Lvl_1_Sheet_61
+  - first:
+      213: 5752469713728035021
+    second: fina_Done_Lvl_1_Sheet_62
+  - first:
+      213: -5952463939283043864
+    second: fina_Done_Lvl_1_Sheet_63
+  - first:
+      213: -2245044204696030673
+    second: fina_Done_Lvl_1_Sheet_64
+  - first:
+      213: 21110336112449149
+    second: fina_Done_Lvl_1_Sheet_65
+  - first:
+      213: -5693967704994881691
+    second: fina_Done_Lvl_1_Sheet_66
+  - first:
+      213: -2907607662197208601
+    second: fina_Done_Lvl_1_Sheet_67
+  - first:
+      213: 5087956555957238364
+    second: fina_Done_Lvl_1_Sheet_68
+  - first:
+      213: 6981084879971179193
+    second: fina_Done_Lvl_1_Sheet_69
+  - first:
+      213: 4428216592455873010
+    second: fina_Done_Lvl_1_Sheet_70
+  - first:
+      213: -6031649649951515094
+    second: fina_Done_Lvl_1_Sheet_71
+  - first:
+      213: 1520388442827002494
+    second: fina_Done_Lvl_1_Sheet_72
+  - first:
+      213: -5072599356512459147
+    second: fina_Done_Lvl_1_Sheet_73
+  - first:
+      213: 2240450061592807783
+    second: fina_Done_Lvl_1_Sheet_74
+  - first:
+      213: 4424680493225962673
+    second: fina_Done_Lvl_1_Sheet_75
+  - first:
+      213: 4979546208065098390
+    second: fina_Done_Lvl_1_Sheet_76
+  - first:
+      213: 2460333778772227117
+    second: fina_Done_Lvl_1_Sheet_77
+  - first:
+      213: 7226683723997794040
+    second: fina_Done_Lvl_1_Sheet_78
+  - first:
+      213: 6408816320374226583
+    second: fina_Done_Lvl_1_Sheet_79
+  - first:
+      213: 2480214013982074090
+    second: fina_Done_Lvl_1_Sheet_80
+  - first:
+      213: -5431010523074630696
+    second: fina_Done_Lvl_1_Sheet_81
+  - first:
+      213: -4380731192876720792
+    second: fina_Done_Lvl_1_Sheet_82
+  - first:
+      213: 6626175181243239058
+    second: fina_Done_Lvl_1_Sheet_83
+  - first:
+      213: 4864895637453077614
+    second: fina_Done_Lvl_1_Sheet_84
+  - first:
+      213: 4099974068234499043
+    second: fina_Done_Lvl_1_Sheet_85
+  - first:
+      213: -1161042845931464610
+    second: fina_Done_Lvl_1_Sheet_86
+  - first:
+      213: -1823180165823949890
+    second: fina_Done_Lvl_1_Sheet_87
+  - first:
+      213: -4418050701906538366
+    second: fina_Done_Lvl_1_Sheet_88
+  - first:
+      213: -5027743764120239318
+    second: fina_Done_Lvl_1_Sheet_89
+  - first:
+      213: 9044829928953787700
+    second: fina_Done_Lvl_1_Sheet_90
+  - first:
+      213: -4389589535240187495
+    second: fina_Done_Lvl_1_Sheet_91
+  - first:
+      213: 9030098684696530885
+    second: fina_Done_Lvl_1_Sheet_92
+  - first:
+      213: -3748477500888741493
+    second: fina_Done_Lvl_1_Sheet_93
+  - first:
+      213: 3822437172265909191
+    second: fina_Done_Lvl_1_Sheet_94
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1935
+        width: 1029
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4865d12b728290a0800000000000000
+      internalID: -6876290215681103793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 2039
+        width: 234
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae916611788c8900800000000000000
+      internalID: 688074862369021601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 1923
+        width: 557
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9d39864032b1c80800000000000000
+      internalID: -8351042582187091489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 1847
+        width: 203
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d9d719aca0186d0800000000000000
+      internalID: -2990096812456698528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1758
+        width: 301
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 324b7b0e44c186bb0800000000000000
+      internalID: -4942669508885629917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1733
+        width: 226
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a5c6664192559270800000000000000
+      internalID: 8256596275758548391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1733
+        width: 203
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2717b023fcc28810800000000000000
+      internalID: 1766199348480644908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 1919
+        width: 122
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29b61c0abbcec9a80800000000000000
+      internalID: -8458625709508564078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 1927
+        width: 74
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbc93b782fa1b4c90800000000000000
+      internalID: -7184619151578391364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 1751
+        width: 455
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd55c40323629a10800000000000000
+      internalID: 1914701793640930801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1762
+        width: 508
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f0ea6ea78ddf5a0800000000000000
+      internalID: -6485789865975869619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 1799
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97a3401c1ac4dccd0800000000000000
+      internalID: -2536286757527995783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 1799
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49643c0dc46e63810800000000000000
+      internalID: 1744835123247007380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 639
+        width: 453
+        height: 1110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 250ff6b6b79a30be0800000000000000
+      internalID: -1512178702317785006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1318
+        width: 1089
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 581b36dea9dd32800800000000000000
+      internalID: 586556033965732229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 1503
+        width: 168
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31155f9c87cd6af0800000000000000
+      internalID: -401445384983604930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 1553
+        width: 108
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df91d9d09f66c53c0800000000000000
+      internalID: -4369504318594934275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 1550
+        width: 103
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ebd7d9cabe5942a0800000000000000
+      internalID: -6752762009922053143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 1519
+        width: 113
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c801052faa5026c20800000000000000
+      internalID: 3198124917154386060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: After Mud Removal
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 440
+        width: 370
+        height: 1065
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d47df1870f8334020800000000000000
+      internalID: 2324764438111967053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soap Effect
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 807
+        width: 1092
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd3141a9f0e3d3b0800000000000000
+      internalID: -5488796158077616698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full Muddy
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 399
+        width: 1061
+        height: 370
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f1b2d5778f247d30800000000000000
+      internalID: 4428216592455873010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 433
+        width: 204
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769cd3ae57da71f10800000000000000
+      internalID: 2240450061592807783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 455
+        width: 306
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bc6553377f976d30800000000000000
+      internalID: 4424680493225962673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 0
+        width: 130
+        height: 405
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6cfcb39ec4938340800000000000000
+      internalID: 4864895637453077614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 1914
+        y: 14
+        width: 134
+        height: 391
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e33e6541b806e830800000000000000
+      internalID: 4099974068234499043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1727
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28012316b4eefa2c0800000000000000
+      internalID: -4418050701906538366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fina_Done_Lvl_1_Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 8
+        width: 116
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf0f0409ea515d70800000000000000
+      internalID: 9030098684696530885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b2ddc27fef54b47469972bf2bc940718
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      After Mud Removal: 2324764438111967053
+      Final: 586556033965732229
+      Full Muddy: 4428216592455873010
+      Soap Effect: -5488796158077616698
+      fina_Done_Lvl_1_Sheet_0: -1581196078841012386
+      fina_Done_Lvl_1_Sheet_1: -6876290215681103793
+      fina_Done_Lvl_1_Sheet_10: -8458625709508564078
+      fina_Done_Lvl_1_Sheet_11: -7184619151578391364
+      fina_Done_Lvl_1_Sheet_12: 1914701793640930801
+      fina_Done_Lvl_1_Sheet_13: 4818402948079637492
+      fina_Done_Lvl_1_Sheet_14: -1165019299058959857
+      fina_Done_Lvl_1_Sheet_15: -6485789865975869619
+      fina_Done_Lvl_1_Sheet_16: -7003310454442815567
+      fina_Done_Lvl_1_Sheet_17: -2536286757527995783
+      fina_Done_Lvl_1_Sheet_18: 1744835123247007380
+      fina_Done_Lvl_1_Sheet_19: -1165854571740200626
+      fina_Done_Lvl_1_Sheet_2: 688074862369021601
+      fina_Done_Lvl_1_Sheet_20: 609334695411965273
+      fina_Done_Lvl_1_Sheet_21: -5237935794024230726
+      fina_Done_Lvl_1_Sheet_22: 4404576919330854728
+      fina_Done_Lvl_1_Sheet_23: -1512178702317785006
+      fina_Done_Lvl_1_Sheet_24: -3534259166875067879
+      fina_Done_Lvl_1_Sheet_25: -3612842478364867358
+      fina_Done_Lvl_1_Sheet_26: -2901990687856738410
+      fina_Done_Lvl_1_Sheet_27: 3389829593670979102
+      fina_Done_Lvl_1_Sheet_28: -8684035544459327193
+      fina_Done_Lvl_1_Sheet_29: -3859430976095813380
+      fina_Done_Lvl_1_Sheet_3: -8351042582187091489
+      fina_Done_Lvl_1_Sheet_30: -456444370282211451
+      fina_Done_Lvl_1_Sheet_32: 1301753402940497528
+      fina_Done_Lvl_1_Sheet_33: -5196242232815286355
+      fina_Done_Lvl_1_Sheet_34: -5702480748355976365
+      fina_Done_Lvl_1_Sheet_35: -5688896842406453939
+      fina_Done_Lvl_1_Sheet_36: -401445384983604930
+      fina_Done_Lvl_1_Sheet_37: -2812382462167635007
+      fina_Done_Lvl_1_Sheet_38: 3869538897543456910
+      fina_Done_Lvl_1_Sheet_39: -4369504318594934275
+      fina_Done_Lvl_1_Sheet_4: -6948293821527399034
+      fina_Done_Lvl_1_Sheet_40: -6752762009922053143
+      fina_Done_Lvl_1_Sheet_41: -2942451078282126541
+      fina_Done_Lvl_1_Sheet_42: 3198124917154386060
+      fina_Done_Lvl_1_Sheet_43: -1503471529177304035
+      fina_Done_Lvl_1_Sheet_44: -7937671376110931276
+      fina_Done_Lvl_1_Sheet_45: 128206028092002053
+      fina_Done_Lvl_1_Sheet_46: -5167329746247904786
+      fina_Done_Lvl_1_Sheet_47: -8334917514801738370
+      fina_Done_Lvl_1_Sheet_48: -3217266219403278557
+      fina_Done_Lvl_1_Sheet_5: -2990096812456698528
+      fina_Done_Lvl_1_Sheet_50: -3948710147505820578
+      fina_Done_Lvl_1_Sheet_51: -7196852262996773811
+      fina_Done_Lvl_1_Sheet_52: -1787208429825709457
+      fina_Done_Lvl_1_Sheet_53: -4435189744125516922
+      fina_Done_Lvl_1_Sheet_54: 7813155259718582635
+      fina_Done_Lvl_1_Sheet_56: 3076419193471823863
+      fina_Done_Lvl_1_Sheet_57: -3008144099453775945
+      fina_Done_Lvl_1_Sheet_58: -8857075079950794429
+      fina_Done_Lvl_1_Sheet_59: 3703140430687565373
+      fina_Done_Lvl_1_Sheet_6: -4942669508885629917
+      fina_Done_Lvl_1_Sheet_60: 1340805026050603177
+      fina_Done_Lvl_1_Sheet_61: 2961103108028271287
+      fina_Done_Lvl_1_Sheet_62: 5752469713728035021
+      fina_Done_Lvl_1_Sheet_63: -5952463939283043864
+      fina_Done_Lvl_1_Sheet_64: -2245044204696030673
+      fina_Done_Lvl_1_Sheet_65: 21110336112449149
+      fina_Done_Lvl_1_Sheet_66: -5693967704994881691
+      fina_Done_Lvl_1_Sheet_67: -2907607662197208601
+      fina_Done_Lvl_1_Sheet_68: 5087956555957238364
+      fina_Done_Lvl_1_Sheet_69: 6981084879971179193
+      fina_Done_Lvl_1_Sheet_7: 8256596275758548391
+      fina_Done_Lvl_1_Sheet_71: -6031649649951515094
+      fina_Done_Lvl_1_Sheet_72: 1520388442827002494
+      fina_Done_Lvl_1_Sheet_73: -5072599356512459147
+      fina_Done_Lvl_1_Sheet_74: 2240450061592807783
+      fina_Done_Lvl_1_Sheet_75: 4424680493225962673
+      fina_Done_Lvl_1_Sheet_76: 4979546208065098390
+      fina_Done_Lvl_1_Sheet_77: 2460333778772227117
+      fina_Done_Lvl_1_Sheet_78: 7226683723997794040
+      fina_Done_Lvl_1_Sheet_79: 6408816320374226583
+      fina_Done_Lvl_1_Sheet_8: 1766199348480644908
+      fina_Done_Lvl_1_Sheet_80: 2480214013982074090
+      fina_Done_Lvl_1_Sheet_81: -5431010523074630696
+      fina_Done_Lvl_1_Sheet_82: -4380731192876720792
+      fina_Done_Lvl_1_Sheet_83: 6626175181243239058
+      fina_Done_Lvl_1_Sheet_84: 4864895637453077614
+      fina_Done_Lvl_1_Sheet_85: 4099974068234499043
+      fina_Done_Lvl_1_Sheet_86: -1161042845931464610
+      fina_Done_Lvl_1_Sheet_87: -1823180165823949890
+      fina_Done_Lvl_1_Sheet_88: -4418050701906538366
+      fina_Done_Lvl_1_Sheet_89: -5027743764120239318
+      fina_Done_Lvl_1_Sheet_9: -7377530758088594813
+      fina_Done_Lvl_1_Sheet_90: 9044829928953787700
+      fina_Done_Lvl_1_Sheet_91: -4389589535240187495
+      fina_Done_Lvl_1_Sheet_92: 9030098684696530885
+      fina_Done_Lvl_1_Sheet_93: -3748477500888741493
+      fina_Done_Lvl_1_Sheet_94: 3822437172265909191
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
