@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db68787a987052f8cd4acefd625d92aa, type: 3}
+  m_Name: AdUnitsSettings
+  m_EditorClassIdentifier:
+  ShowAppopenOnLoad: 1
+  TestAds: 0
+  BannerSettings:
+    bannerSize: 0
+    BannerPosition: 3
+    MrecPosition: 0
+  Applovin:
+    AppKey: 3eOdThMf08WPwr9aZS2PJyio9Pv8HrHLUfzyMKcMS7mMyvyWM_xfxdS52MEKBVffAdcWyEuOMdmIXiqvilTeN0
+    AdUnitsInfo:
+    - AdType: 0
+      AdUnitId: c9bcdee98fdc587d
+    - AdType: 1
+      AdUnitId: 097dbbfa370c1b26
+    - AdType: 2
+      AdUnitId: bed73bcf6b09616b
+    - AdType: 4
+      AdUnitId: 700e78613d385356
+    - AdType: 3
+      AdUnitId: deaed721f3fd5a28
+  Admob:
+    AppKey: ca-app-pub-7935166513534421~4951870002
+    AdUnitsInfo:
+    - AdType: 0
+      AdUnitId: ca-app-pub-7935166513534421/5666315757
+    - AdType: 1
+      AdUnitId: ca-app-pub-7935166513534421/6360450325
+    - AdType: 2
+      AdUnitId: ca-app-pub-7935166513534421/5370802285
+    - AdType: 4
+      AdUnitId: ca-app-pub-7935166513534421/6979397422
+    - AdType: 3
+      AdUnitId: ca-app-pub-7935166513534421/3566233196
