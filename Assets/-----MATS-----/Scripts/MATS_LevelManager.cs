@@ -23,6 +23,7 @@ public class MATS_LevelManager : MonoBehaviour
     {
         currentLevelIndex = startLevel;
         MATS_Debug.Log($"  Start Level number: {startLevel}");
+        if(currentTaskIndex == 0)
         StartLevel();
     }
 
@@ -53,6 +54,7 @@ public class MATS_LevelManager : MonoBehaviour
         }
 
         MATS_LevelTask task = level.tasks[currentTaskIndex];
+        task.gameObject.SetActive(true);
         task.OnTaskCompleted += TaskCompleted;
         StartCoroutine(task.StartTask());
     }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class MATS_LevelStart : MATS_LevelTask
 {
 
-
+    public bool isTask1 = false;
     
 
     [SerializeField] GameObject levelAvatar;
@@ -20,6 +20,7 @@ public class MATS_LevelStart : MATS_LevelTask
     [Header ("Cleaning")]
     [Space(10)]
     [SerializeField] bool isRemovingMudComplete = false;
+    bool[] hasFaded;
     [Space(10)]
     public CarsParts[] carPartsToClean;
     [Header("Mud Brush")]
@@ -28,11 +29,12 @@ public class MATS_LevelStart : MATS_LevelTask
 
     private void Start()
     {
+        hasFaded = new bool[carPartsToClean[0].mudParts.parts.Length];
         for (int i = 0; i < carPartsToClean.Length; i++)
         {
             for (int j = 0; j < carPartsToClean[i].mudParts.parts.Length; j++)
             {
-                carPartsToClean[i].mudParts.parts[j].GetComponent<ScratchCardManager>().InputEnabled = false;
+                carPartsToClean[i].mudParts.parts[j].GetComponent<ScratchCard>().InputEnabled = false;
             }
 
         }
@@ -46,18 +48,28 @@ public class MATS_LevelStart : MATS_LevelTask
 
 
         yield return new WaitForSeconds(2f);
+        if(playerVehicleBody.transform.parent.GetComponent<Animator>())
         playerVehicleBody.transform.parent.GetComponent<Animator>().enabled = false;
         userClicked = false;
 
         // Start movement coroutine
         Coroutine moveRoutine = StartCoroutine(MoveAvatar());
-      
+        if(taskName== "MudRemoval")
+        {
+            MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[1].gameObject.SetActive(true);
+        }
+        else if(taskName == "Soap")
+        {
+            MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[2].gameObject.SetActive(true);
+        }
+
         Coroutine moveRoutine1 = StartCoroutine(UpdateProgress());
 
 
         // WAIT until user clicks button
-        yield return new WaitUntil(() => userClicked);
-
+          yield return new WaitUntil(() => isRemovingMudComplete);
+       this.gameObject.SetActive(false);
+        
         // Stop movement
         StopCoroutine(moveRoutine);
 
@@ -73,53 +85,58 @@ public class MATS_LevelStart : MATS_LevelTask
         {
             for (int j = 0; j < carPartsToClean[i].mudParts.parts.Length; j++)
             {
-                carPartsToClean[i].mudParts.parts[j].GetComponent<ScratchCardManager>().InputEnabled = true;
+                carPartsToClean[i].mudParts.parts[j].GetComponent<ScratchCard>().InputEnabled = true;
             }
 
         }
 
-        while (isRemovingMudComplete==false)
+        while (!isRemovingMudComplete)
         {
+            bool allCleaned = true;
+
             for (int i = 0; i < carPartsToClean.Length; i++)
             {
-                for (int j = 0; j < carPartsToClean[i].mudParts.partsEraseProgress.Length; j++)
+                var mud = carPartsToClean[i].mudParts;
+
+                for (int j = 0; j < mud.partsEraseProgress.Length; j++)
                 {
-                    carPartsToClean[i].mudParts.currentProgress[j] = carPartsToClean[i].mudParts.partsEraseProgress[j].GetProgress();
+                    mud.currentProgress[j] = mud.partsEraseProgress[j].GetProgress();
 
-                    if(carPartsToClean[i].mudParts.currentProgress[j] >= carPartsToClean[i].mudParts.requiredCleanProgress[j])
+                    // Mark cleaned
+                    if (mud.currentProgress[j] >= mud.requiredCleanProgress[j])
                     {
-                        carPartsToClean[i].mudParts.isCleaned[j] = true;
-                       // carPartsToClean[i].mudParts.parts[j].InputEnabled = false;
-                    }
-                    
+                        mud.isCleaned[j] = true;
 
-                   
-                   
-                   
-                }
-
-            }
-
-            if (isRemovingMudComplete == false) {
-                if (carPartsToClean[0].mudParts.isCleaned[0]==true&& carPartsToClean[0].mudParts.isCleaned[1]==true&& carPartsToClean[0].mudParts.isCleaned[2])
-                    {
-                    isRemovingMudComplete = true;
-
-
-                    for (int i = 0; i < carPartsToClean.Length; i++)
-                    {
-                        for (int j = 0; j < carPartsToClean[i].mudParts.parts. Length; i++)
+                        // 🔥 Fade ONLY once when it becomes cleaned
+                        if (!hasFaded[j])
                         {
-
-                    StartCoroutine( TweenFloat(0f, 1f, 1.5f,value => carPartsToClean[i].mudParts.parts[j].GetComponent<SpriteRenderer>().color. = value));
+                            hasFaded[j] = true;
+                            FadeMudPart(mud.partsEraseProgress[j].gameObject);
                         }
                     }
 
+                    if (!mud.isCleaned[j])
+                        allCleaned = false;
                 }
             }
 
+            isRemovingMudComplete = allCleaned;
             yield return null;
         }
+    }
+
+    private void FadeMudPart(GameObject part)
+    {
+        SpriteRenderer sr = part.GetComponent<SpriteRenderer>();
+
+        StartCoroutine(
+            TweenFloat(1f, 0f, 1.5f, value =>
+            {
+                Color c = sr.color;
+                c.a = value;
+                sr.color = c;
+            })
+        );
     }
 
     private IEnumerator MoveAvatar()
