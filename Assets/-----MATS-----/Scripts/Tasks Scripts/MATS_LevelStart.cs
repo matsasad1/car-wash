@@ -107,7 +107,7 @@ public class MATS_LevelStart : MATS_LevelTask
                     {
                         mud.isCleaned[j] = true;
 
-                        // 🔥 Fade ONLY once when it becomes cleaned
+                        //  Fade ONLY once when it becomes cleaned
                         if (!hasFaded[j])
                         {
                             hasFaded[j] = true;
