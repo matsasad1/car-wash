@@ -24,38 +24,41 @@ public class MATS_LevelInitials : MATS_LevelTask
         levelAvatar.SetActive(false);
         initialCar.SetActive(false);
         MATS_Debug.Log("Starting Initials of level Task: " + taskName);
-        if (playerVehicleBody.transform.parent.GetComponent<Animator>())
-            playerVehicleBody.transform.parent.GetComponent<Animator>().enabled = false;
+     
         if (tempCoroutine != null)
         {
             StopCoroutine(tempCoroutine);
             tempCoroutine = null;
         }
-        tempCoroutine = StartCoroutine(Fader(true));
-        yield return new WaitForSeconds(3.3f);
+        tempCoroutine = StartCoroutine(FadeOut());
+        yield return new WaitForSeconds(1.8f);
         initialCar.SetActive(true);
         levelAvatar.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         if (playerVehicleBody.transform.parent.GetComponent<Animator>())
             playerVehicleBody.transform.parent.GetComponent<Animator>().enabled = false;
 
         Coroutine moveRoutine = StartCoroutine(MoveBody());
         washItButton.gameObject.SetActive(true);
         yield return new WaitUntil(() => startTask1);
-        yield return new WaitForSeconds(3.3f);
         if (tempCoroutine != null)
         {
             StopCoroutine(tempCoroutine);
             tempCoroutine = null;
         }
-        tempCoroutine = StartCoroutine(Fader(false));
-        yield return new WaitForSeconds(3.3f);
+        tempCoroutine = StartCoroutine(FadeInFadeOut());
+        yield return new WaitForSeconds(1.8f);
+        levelAvatar.SetActive(false);
+        initialCar.SetActive(false);
+        yield return new WaitForSeconds(1.8f);
+        MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[0].gameObject.SetActive(false);
         StopCoroutine(moveRoutine);
     }
 
     public void IsStartInitialTask()
     {
         startTask1 = true;
+        washItButton.gameObject.SetActive(false);
     }
 
     private IEnumerator MoveBody()
