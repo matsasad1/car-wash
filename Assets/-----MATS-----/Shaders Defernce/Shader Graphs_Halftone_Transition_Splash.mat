@@ -38,8 +38,8 @@ Material:
     - _FadeAmount: 0
     - _Size: 1
     m_Colors:
-    - _DarknessSize: {r: 50, g: 50, b: 0, a: 0}
-    - _LevelOfDetail: {r: 50, g: 100, b: 0, a: 0}
+    - _DarknessSize: {r: 1, g: 1, b: 0, a: 0}
+    - _LevelOfDetail: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2121485597189015903

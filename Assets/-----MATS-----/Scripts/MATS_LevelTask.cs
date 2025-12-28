@@ -111,6 +111,38 @@ public abstract class MATS_LevelTask : MonoBehaviour
         onUpdate?.Invoke(endValue);
         onComplete?.Invoke();
     }
+    public IEnumerator Fader(bool isFadeOut)
+    {
+        MATS_UIManager.instance.fadeOutScreenMat.SetFloat("_FadeAmount", -1f);
+        MATS_UIManager.instance.fadeInScreenMat.SetFloat("_FadeAmount", -1f);
+
+        if (isFadeOut==true)
+        {
+            MATS_UIManager.instance.fadeInScreen.SetActive(true);
+
+            StartCoroutine(
+                TweenFloat(-1f, 1f, 1.5f, value =>
+                {
+
+                    MATS_UIManager.instance.fadeInScreenMat.SetFloat("_FadeAmount", value);
+
+                })
+            );
+            yield return new WaitForSeconds(1.8f);
+
+            MATS_UIManager.instance.fadeInScreen.SetActive(false);
+        }
+        MATS_UIManager.instance.fadeOutScreen.SetActive(true);
+        StartCoroutine(
+           TweenFloat(-1f, 1f, 1.5f, value =>
+           {
+               MATS_UIManager.instance.fadeOutScreenMat.SetFloat("_FadeAmount", value);
+
+           })
+       );
+        yield return new WaitForSeconds(1.8f);
+        MATS_UIManager.instance.fadeOutScreen.SetActive(false);
+    }
 }
 
 

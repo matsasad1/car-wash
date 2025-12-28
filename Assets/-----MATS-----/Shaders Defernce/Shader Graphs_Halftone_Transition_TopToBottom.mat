@@ -35,7 +35,7 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _FadeAmount: 0.567
+    - _FadeAmount: -1
     m_Colors:
     - _DarknessSize: {r: 0, g: 0, b: 0, a: 0}
     - _LevelOfDetail: {r: 50, g: 100, b: 0, a: 0}

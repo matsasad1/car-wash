@@ -49,7 +49,7 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _BrightnessFactor: 0.25
-    - _DissolveFactor: 1
+    - _DissolveFactor: 0.259
     m_Colors:
     - _Color: {r: 0.7311321, g: 1, b: 0.96978545, a: 0}
   m_BuildTextureStacks: []
