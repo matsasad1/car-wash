@@ -601,6 +601,12 @@ MonoBehaviour:
   BrushScale: {x: 1, y: 1}
   InputEnabled: 0
   _mode: 0
+  gunTip: {fileID: 0}
+  laserDistance: 15
+  scratchLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  debugLaser: 1
 --- !u!212 &98881267
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -756,6 +762,12 @@ MonoBehaviour:
   BrushScale: {x: 1, y: 1}
   InputEnabled: 0
   _mode: 0
+  gunTip: {fileID: 0}
+  laserDistance: 15
+  scratchLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  debugLaser: 1
 --- !u!212 &148313321
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -881,6 +893,12 @@ MonoBehaviour:
   BrushScale: {x: 1, y: 1}
   InputEnabled: 0
   _mode: 0
+  gunTip: {fileID: 0}
+  laserDistance: 15
+  scratchLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  debugLaser: 1
 --- !u!114 &348457295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1225,7 +1243,8 @@ GameObject:
   - component: {fileID: 479251140}
   - component: {fileID: 479251139}
   - component: {fileID: 479251138}
-  m_Layer: 0
+  - component: {fileID: 479251141}
+  m_Layer: 6
   m_Name: Tire 1 R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1367,6 +1386,58 @@ MonoBehaviour:
   BrushScale: {x: 1, y: 1}
   InputEnabled: 1
   _mode: 0
+  gunTip: {fileID: 0}
+  laserDistance: 15
+  scratchLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  debugLaser: 1
+--- !u!61 &479251141
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479251135}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.64, y: 1.64}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.64, y: 1.64}
+  m_EdgeRadius: 0
 --- !u!1 &485750061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,6 +1508,12 @@ MonoBehaviour:
   BrushScale: {x: 1, y: 1}
   InputEnabled: 0
   _mode: 0
+  gunTip: {fileID: 0}
+  laserDistance: 15
+  scratchLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  debugLaser: 1
 --- !u!114 &485750065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,6 +1610,7 @@ GameObject:
   - component: {fileID: 510480025}
   - component: {fileID: 510480024}
   - component: {fileID: 510480023}
+  - component: {fileID: 510480026}
   m_Layer: 0
   m_Name: Red Cube
   m_TagString: Untagged
@@ -1565,7 +1643,7 @@ MonoBehaviour:
   coordinate: 2
   constrain: 0
   constrainThreshold: 5
-  multiplier: 100
+  multiplier: 5
   onDelta:
     m_PersistentCalls:
       m_Calls:
@@ -1616,8 +1694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf437012cc0e3e4cbc4b0a9ed6eff21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  space: 0
+  target: {fileID: 963153183}
+  space: 1
   directionA: {x: 1, y: 0, z: 0}
   directionB: {x: 0, y: 1, z: 0}
   rotateDirectionsToCamera: 0
@@ -1649,6 +1727,22 @@ Transform:
   - {fileID: 1881006829}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &510480026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510480022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4981efad3c0baa24ebe13f658a1196ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserTip: {fileID: 1227855877}
+  laserLength: 100
+  minDistance: 2
+  scratchCard: {fileID: 1103348152}
 --- !u!1 &566335544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2429,6 +2523,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1300591560}
+  - {fileID: 1227855877}
   m_Father: {fileID: 510480025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &963153185
@@ -2502,7 +2597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1005839240
 Transform:
   m_ObjectHideFlags: 0
@@ -2646,7 +2741,8 @@ GameObject:
   - component: {fileID: 1103348153}
   - component: {fileID: 1103348152}
   - component: {fileID: 1103348155}
-  m_Layer: 0
+  - component: {fileID: 1103348156}
+  m_Layer: 6
   m_Name: Muddy Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2690,6 +2786,12 @@ MonoBehaviour:
   BrushScale: {x: 1, y: 1}
   InputEnabled: 1
   _mode: 0
+  gunTip: {fileID: 0}
+  laserDistance: 15
+  scratchLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  debugLaser: 1
 --- !u!114 &1103348153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2788,6 +2890,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Card: {fileID: 1103348152}
+--- !u!61 &1103348156
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103348150}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.5, y: 3.28}
+    newSize: {x: 10.5, y: 3.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 10.5, y: 3.28}
+  m_EdgeRadius: 0
 --- !u!1 &1150797107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,6 +3192,37 @@ MonoBehaviour:
   preset: 0
   onEnableBehaviour: 2
   onDisableBehaviour: 2
+--- !u!1 &1227855876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1227855877}
+  m_Layer: 0
+  m_Name: Ray Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1227855877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227855876}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963153184}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237960240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3433,7 +3612,8 @@ GameObject:
   - component: {fileID: 1443319394}
   - component: {fileID: 1443319393}
   - component: {fileID: 1443319392}
-  m_Layer: 0
+  - component: {fileID: 1443319395}
+  m_Layer: 6
   m_Name: Tire 2 F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3575,6 +3755,58 @@ MonoBehaviour:
   BrushScale: {x: 1, y: 1}
   InputEnabled: 1
   _mode: 0
+  gunTip: {fileID: 0}
+  laserDistance: 15
+  scratchLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  debugLaser: 1
+--- !u!61 &1443319395
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443319389}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.64, y: 1.64}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.64, y: 1.64}
+  m_EdgeRadius: 0
 --- !u!1 &1504694504
 GameObject:
   m_ObjectHideFlags: 0
@@ -4452,6 +4684,12 @@ MonoBehaviour:
   BrushScale: {x: 1, y: 1}
   InputEnabled: 0
   _mode: 0
+  gunTip: {fileID: 0}
+  laserDistance: 15
+  scratchLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  debugLaser: 1
 --- !u!212 &1973366306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4694,6 +4932,12 @@ MonoBehaviour:
   BrushScale: {x: 1, y: 1}
   InputEnabled: 0
   _mode: 0
+  gunTip: {fileID: 0}
+  laserDistance: 15
+  scratchLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  debugLaser: 1
 --- !u!212 &2028873176
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4765,7 +5009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2035375258
 Transform:
   m_ObjectHideFlags: 0
