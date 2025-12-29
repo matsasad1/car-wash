@@ -135,15 +135,30 @@ namespace Lean.Common
 		}
 
 		private void UpdatePosition(float factor)
-		{
-			var finalTransform = target != null ? target.transform : transform;
-			var newDelta       = Vector3.Lerp(remainingDelta, Vector3.zero, factor);
+{
+    var finalTransform = target != null ? target.transform : transform;
+    var newDelta       = Vector3.Lerp(remainingDelta, Vector3.zero, factor);
 
-			finalTransform.position += remainingDelta - newDelta;
+    Vector3 move = remainingDelta - newDelta;
+    Vector3 newPos = finalTransform.position + move;
 
-			remainingDelta = newDelta;
-		}
-	}
+    if (clampPosition)
+    {
+        newPos.x = Mathf.Clamp(newPos.x, minPosition.x, maxPosition.x);
+        newPos.y = Mathf.Clamp(newPos.y, minPosition.y, maxPosition.y);
+    }
+
+    finalTransform.position = newPos;
+    remainingDelta = newDelta;
+}
+
+
+        [Header("Clamp Position")]
+        [SerializeField] public bool clampPosition;
+
+        [SerializeField] private Vector2 minPosition;
+        [SerializeField] private Vector2 maxPosition;
+    }
 }
 
 #if UNITY_EDITOR
@@ -178,7 +193,20 @@ namespace Lean.Common.Editor
 			Draw("scaleByTime", "If you enable this then the translation will be multiplied by Time.deltaTime. This allows you to maintain frame rate independent movement.");
 			Draw("damping", "If you want this component to change smoothly over time, then this allows you to control how quick the changes reach their target value.\n\n-1 = Instantly change.\n\n1 = Slowly change.\n\n10 = Quickly change.");
 			Draw("defaultPosition", "If you call the ResetPosition method, the position will be set to this.");
-		}
+
+            Separator();
+
+            Draw("clampPosition", "Enable position clamping on X and Y axis.");
+
+            if (Any(tgts, t => t.clampPosition == true))
+            {
+                BeginIndent();
+                Draw("minPosition", "Minimum X and Y position.");
+                Draw("maxPosition", "Maximum X and Y position.");
+                EndIndent();
+            }
+
+        }
 	}
 }
 #endif

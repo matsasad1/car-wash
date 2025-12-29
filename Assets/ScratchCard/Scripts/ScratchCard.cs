@@ -234,43 +234,116 @@ namespace ScratchCardAsset
 		{
 			cardRenderer.ScratchLine(start, end);
 		}
+        [Header("Laser Scratch")]
+        [SerializeField] private Transform gunTip;
+        [SerializeField] private float laserDistance = 15f;
+        [SerializeField] private LayerMask scratchLayer;
+        [SerializeField] private bool debugLaser = true;
+        /*  public Vector2 GetScratchPosition(Vector2 position)
+          {
+              var scratchPosition = Vector2.zero;
+              if (MainCamera.orthographic || isCanvasOverlay)
+              {
+                  var clickPosition = isCanvasOverlay ? (Vector3)position : MainCamera.ScreenToWorldPoint(position);
+                  var lossyScale = Surface.lossyScale;
+                  var clickLocalPosition = Vector2.Scale(Surface.InverseTransformPoint(clickPosition), lossyScale) +
+                                           boundsSize / 2f;
+                  var pixelsPerInch = new Vector2(imageSize.x / boundsSize.x / lossyScale.x,
+                      imageSize.y / boundsSize.y / lossyScale.y);
+                  scratchPosition = Vector2.Scale(Vector2.Scale(clickLocalPosition, lossyScale), pixelsPerInch);
+              }
+              else
+              {
+                  var plane = new Plane(Surface.forward, Surface.position);
+                  var ray = MainCamera.ScreenPointToRay(position);
+                  float enter;
+                  if (plane.Raycast(ray, out enter))
+                  {
+                      var point = ray.GetPoint(enter);
+                      var pointLocal = Surface.InverseTransformPoint(point);
+                      var uv = triangle.GetUV(pointLocal);
+                      scratchPosition = new Vector2(uv.x * imageSize.x, uv.y * imageSize.y);
+                  }
+              }
 
-		private Vector2 GetScratchPosition(Vector2 position)
-		{
-			var scratchPosition = Vector2.zero;
-			if (MainCamera.orthographic || isCanvasOverlay)
-			{
-				var clickPosition = isCanvasOverlay ? (Vector3) position : MainCamera.ScreenToWorldPoint(position);
-				var lossyScale = Surface.lossyScale;
-				var clickLocalPosition = Vector2.Scale(Surface.InverseTransformPoint(clickPosition), lossyScale) +
-				                         boundsSize / 2f;
-				var pixelsPerInch = new Vector2(imageSize.x / boundsSize.x / lossyScale.x,
-					imageSize.y / boundsSize.y / lossyScale.y);
-				scratchPosition = Vector2.Scale(Vector2.Scale(clickLocalPosition, lossyScale), pixelsPerInch);
-			}
-			else
-			{
-				var plane = new Plane(Surface.forward, Surface.position);
-				var ray = MainCamera.ScreenPointToRay(position);
-				float enter;
-				if (plane.Raycast(ray, out enter))
-				{
-					var point = ray.GetPoint(enter);
-					var pointLocal = Surface.InverseTransformPoint(point);
-					var uv = triangle.GetUV(pointLocal);
-					scratchPosition = new Vector2(uv.x * imageSize.x, uv.y * imageSize.y);
-				}
-			}
+              return scratchPosition;
+          }*/
+        public Vector2 GetScratchPosition(Vector2 _)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(
+                gunTip.position,
+                gunTip.up,
+                laserDistance,
+                scratchLayer
+            );
 
-			return scratchPosition;
-		}
+            if (debugLaser)
+            {
+                Debug.DrawRay(
+                    gunTip.position,
+                    gunTip.up * laserDistance,
+                    hit ? Color.green : Color.red
+                );
+            }
 
-		#region Public Methods
+            if (!hit)
+                return Vector2.zero;
 
-		/// <summary>
-		/// Fills RenderTexture with white color (100% scratched surface)
-		/// </summary>
-		public void FillInstantly()
+            // Convert hit world position → screen position
+            Vector2 screenPos = MainCamera.WorldToScreenPoint(hit.point);
+
+            // === ORIGINAL LOGIC (UNCHANGED) ===
+            var scratchPosition = Vector2.zero;
+
+            if (MainCamera.orthographic || isCanvasOverlay)
+            {
+                var clickPosition = isCanvasOverlay
+                    ? (Vector3)screenPos
+                    : MainCamera.ScreenToWorldPoint(screenPos);
+
+                var lossyScale = Surface.lossyScale;
+
+                var clickLocalPosition =
+                    Vector2.Scale(Surface.InverseTransformPoint(clickPosition), lossyScale)
+                    + boundsSize / 2f;
+
+                var pixelsPerInch = new Vector2(
+                    imageSize.x / boundsSize.x / lossyScale.x,
+                    imageSize.y / boundsSize.y / lossyScale.y
+                );
+
+                scratchPosition = Vector2.Scale(
+                    Vector2.Scale(clickLocalPosition, lossyScale),
+                    pixelsPerInch
+                );
+            }
+            else
+            {
+                var plane = new Plane(Surface.forward, Surface.position);
+                var ray = MainCamera.ScreenPointToRay(screenPos);
+
+                if (plane.Raycast(ray, out float enter))
+                {
+                    var point = ray.GetPoint(enter);
+                    var pointLocal = Surface.InverseTransformPoint(point);
+                    var uv = triangle.GetUV(pointLocal);
+                    scratchPosition = new Vector2(
+                        uv.x * imageSize.x,
+                        uv.y * imageSize.y
+                    );
+                }
+            }
+
+            return scratchPosition;
+        }
+
+
+        #region Public Methods
+
+        /// <summary>
+        /// Fills RenderTexture with white color (100% scratched surface)
+        /// </summary>
+        public void FillInstantly()
 		{
 			cardRenderer.FillRenderTextureWithColor(Color.white);
 			IsScratched = true;

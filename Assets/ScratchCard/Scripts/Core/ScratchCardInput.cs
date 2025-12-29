@@ -42,10 +42,11 @@ namespace ScratchCardAsset.Core
 		private Vector2 erasePosition;
 		private bool[] isScratching;
 		private bool[] isStartPosition;
+        private const float MinPixelDistance = 4f;
 #if UNITY_WEBGL
 	private bool isWebgl = true;
 #else
-		private bool isWebgl = false;
+        private bool isWebgl = false;
 #endif
 
 		private const int MaxTouchCount = 10;
@@ -106,33 +107,67 @@ namespace ScratchCardAsset.Core
 			}
 		}
 
-		private void TryScratch(int fingerId, Vector2 position)
-		{
-			if (OnScratch != null)
-			{
-				erasePosition = OnScratch(position);
-			}
+        /*	private void TryScratch(int fingerId, Vector2 position)
+            {
+                if (OnScratch != null)
+                {
+                    erasePosition = OnScratch(position);
+                }
 
-			if (isStartPosition[fingerId])
-			{
-				eraseStartPositions[fingerId] = erasePosition;
-				eraseEndPositions[fingerId] = eraseStartPositions[fingerId];
-				isStartPosition[fingerId] = !isStartPosition[fingerId];
-			}
-			else
-			{
-				eraseStartPositions[fingerId] = eraseEndPositions[fingerId];
-				eraseEndPositions[fingerId] = erasePosition;
-			}
+                if (isStartPosition[fingerId])
+                {
+                    eraseStartPositions[fingerId] = erasePosition;
+                    eraseEndPositions[fingerId] = eraseStartPositions[fingerId];
+                    isStartPosition[fingerId] = !isStartPosition[fingerId];
+                }
+                else
+                {
+                    eraseStartPositions[fingerId] = eraseEndPositions[fingerId];
+                    eraseEndPositions[fingerId] = erasePosition;
+                }
 
-			if (!isScratching[fingerId])
-			{
-				eraseEndPositions[fingerId] = eraseStartPositions[fingerId];
-				isScratching[fingerId] = true;
-			}
-		}
-		
-		public void Scratch()
+                if (!isScratching[fingerId])
+                {
+                    eraseEndPositions[fingerId] = eraseStartPositions[fingerId];
+                    isScratching[fingerId] = true;
+                }
+            }*/
+
+        private void TryScratch(int fingerId, Vector2 position)
+        {
+            if (OnScratch != null)
+            {
+                erasePosition = OnScratch(position);
+            }
+
+            // 🔥 EARLY EXIT — CPU SAVER
+            if (!isStartPosition[fingerId] &&
+                Vector2.Distance(eraseEndPositions[fingerId], erasePosition) < MinPixelDistance)
+            {
+                return;
+            }
+
+            if (isStartPosition[fingerId])
+            {
+                eraseStartPositions[fingerId] = erasePosition;
+                eraseEndPositions[fingerId] = eraseStartPositions[fingerId];
+                isStartPosition[fingerId] = false;
+            }
+            else
+            {
+                eraseStartPositions[fingerId] = eraseEndPositions[fingerId];
+                eraseEndPositions[fingerId] = erasePosition;
+            }
+
+            if (!isScratching[fingerId])
+            {
+                eraseEndPositions[fingerId] = eraseStartPositions[fingerId];
+                isScratching[fingerId] = true;
+            }
+        }
+
+
+        public void Scratch()
 		{
 			for (var i = 0; i < isScratching.Length; i++)
 			{
