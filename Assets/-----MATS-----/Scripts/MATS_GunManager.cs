@@ -66,7 +66,7 @@ public class MATS_GunManager : MonoBehaviour
 
         if (!onScratchPlaying)
         {
-            scratchParticle?.Play();
+            scratchParticle.Play();
             onScratchPlaying = true;
         }
     }

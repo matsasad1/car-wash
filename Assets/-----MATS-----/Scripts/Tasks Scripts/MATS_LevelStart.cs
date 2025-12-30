@@ -7,8 +7,8 @@ public class MATS_LevelStart : MATS_LevelTask
 {
 
     public bool isTask1 = false;
-    
 
+    [SerializeField] GameObject mainCarObject;
     [SerializeField] GameObject levelAvatar;
     [SerializeField] GameObject playerVehicleBody,rareTire,frontTire;
 
@@ -26,6 +26,9 @@ public class MATS_LevelStart : MATS_LevelTask
     [Header("Mud Brush")]
     public Texture mudBrushTexture;
 
+    [Header("Guns")]
+    [SerializeField] GameObject waterGun;
+    [SerializeField] GameObject soapGun;
 
     private void Start()
     {
@@ -54,13 +57,18 @@ public class MATS_LevelStart : MATS_LevelTask
 
         // Start movement coroutine
         Coroutine moveRoutine = StartCoroutine(MoveAvatar());
+
         if(taskName== "MudRemoval")
         {
             MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[1].gameObject.SetActive(true);
+            DelayActive(waterGun,0.6f);
+            soapGun.SetActive(false);
         }
         else if(taskName == "Soap")
         {
             MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[2].gameObject.SetActive(true);
+            DelayActive(soapGun, 0.6f);
+            waterGun.SetActive(false);
         }
 
         Coroutine moveRoutine1 = StartCoroutine(UpdateProgress());
@@ -127,6 +135,17 @@ public class MATS_LevelStart : MATS_LevelTask
             isRemovingMudComplete = allCleaned;
             yield return null;
         }
+    }
+
+    void DelayActive(GameObject obj,float wait)
+    {
+        StartCoroutine(Delay(wait,obj));
+    }
+
+    IEnumerator Delay(float wait,GameObject obj)
+    {
+        yield return new WaitForSeconds(wait);
+        obj.SetActive(true);
     }
 
     private void FadeMudPart(GameObject part)

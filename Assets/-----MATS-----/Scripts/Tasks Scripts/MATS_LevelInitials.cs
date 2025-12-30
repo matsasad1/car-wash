@@ -5,8 +5,18 @@ using UnityEngine.UI;
 
 public class MATS_LevelInitials : MATS_LevelTask
 {
+    [SerializeField] GameObject mainCarObj;
+
     [SerializeField] GameObject levelAvatar;
     [SerializeField] GameObject initialCar,playerVehicleBody, rareTire, frontTire;
+    [Header("Scene Objects")]
+
+    [SerializeField] GameObject bg1;
+    [SerializeField] GameObject bg2;
+    [SerializeField] GameObject ramp;
+
+
+
 
     [Header("Movement")]
     [SerializeField] private float minY = 1.64f;
@@ -17,6 +27,11 @@ public class MATS_LevelInitials : MATS_LevelTask
 
     bool startTask1;
     Coroutine tempCoroutine;
+
+    private void Start()
+    {
+        bg1.SetActive(true);
+    }
     protected override IEnumerator ExecuteTask()
     {
         washItButton.onClick.RemoveAllListeners();
@@ -50,13 +65,20 @@ public class MATS_LevelInitials : MATS_LevelTask
         yield return new WaitForSeconds(1.8f);
         levelAvatar.SetActive(false);
         initialCar.SetActive(false);
+
+        mainCarObj.SetActive(true);
+        bg1.SetActive(false);
+        bg2.SetActive(true);
+        ramp.SetActive(true);
         yield return new WaitForSeconds(1.8f);
-        for(int i=1;i< MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks.Length;i++)
+    /*    for(int i=1;i< MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks.Length;i++)
         {
-            MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[i].gameObject.SetActive(true);
-        }
+        }*/
         MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[0].gameObject.SetActive(false);
+            MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[1].gameObject.SetActive(true);
         StopCoroutine(moveRoutine);
+     
+
     }
 
     public void IsStartInitialTask()

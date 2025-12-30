@@ -2,6 +2,7 @@
 using ScratchCardAsset.Core.Data;
 using UnityEngine;
 using UnityEngine.Rendering;
+using static UnityEngine.UI.Image;
 
 namespace ScratchCardAsset
 {
@@ -147,9 +148,9 @@ namespace ScratchCardAsset
             }
 
             // 🔥 VFX control lives HERE (stable)
-            if (activeGun != null)
+            if (activeGun != null&&InputEnabled)
             {
-                if (IsScratching && HasScratchHit)
+                if ( HasScratchHit)
                 {
                     activeGun.OnScratch();
                 }
@@ -322,6 +323,10 @@ namespace ScratchCardAsset
                 activeGun.laserDistance,
                 activeGun.scratchLayer
             );
+			if (activeGun.debugLaser)
+			{
+				Debug.DrawRay(activeGun.gunTip.position, activeGun.gunTip.up * activeGun.laserDistance, hit ? Color.green : Color.red);
+			}
 
             if (!hit)
                 return Vector2.zero;
