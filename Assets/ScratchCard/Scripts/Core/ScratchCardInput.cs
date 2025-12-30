@@ -163,6 +163,7 @@ namespace ScratchCardAsset.Core
             {
                 eraseEndPositions[fingerId] = eraseStartPositions[fingerId];
                 isScratching[fingerId] = true;
+
             }
         }
 

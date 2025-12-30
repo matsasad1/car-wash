@@ -47,9 +47,9 @@ public class MATS_LevelStart : MATS_LevelTask
         //  levelAvatar.SetActive(true);
 
 
-        yield return new WaitForSeconds(2f);
-        if(playerVehicleBody.transform.parent.GetComponent<Animator>())
-        playerVehicleBody.transform.parent.GetComponent<Animator>().enabled = false;
+        
+       /* if(playerVehicleBody.transform.parent.GetComponent<Animator>())
+        playerVehicleBody.transform.parent.GetComponent<Animator>().enabled = false;*/
         userClicked = false;
 
         // Start movement coroutine
@@ -112,6 +112,10 @@ public class MATS_LevelStart : MATS_LevelTask
                         {
                             hasFaded[j] = true;
                             FadeMudPart(mud.partsEraseProgress[j].gameObject);
+                            if(MATS_GameManager.Instance.activeGun != null)
+                            {
+                                MATS_GameManager.Instance.activeGun.OnScratchStopedDelayed();
+                            }
                         }
                     }
 

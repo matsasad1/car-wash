@@ -67,7 +67,7 @@ namespace ScratchCardAsset
 		}
 
 		private ScratchCardRenderer cardRenderer;
-		private ScratchCardInput cardInput;
+		public ScratchCardInput cardInput;
 		private Triangle triangle;
 		private SpriteRenderer surfaceSpriteRenderer;
 		private MeshFilter surfaceMeshFilter;
@@ -81,10 +81,11 @@ namespace ScratchCardAsset
 
 		private const string BlendOpShaderParam = "_BlendOpValue";
 		private const string SourceTexProperty = "_SourceTex";
+        public bool HasScratchHit { get; private set; }
+        public Vector2 LastScratchWorldPoint { get; private set; }
+        #region MonoBehaviour Methods
 
-		#region MonoBehaviour Methods
-
-		void Start()
+        void Start()
 		{
 			Init();
 		}
@@ -100,7 +101,7 @@ namespace ScratchCardAsset
 			cardRenderer.Release();
 		}
 
-		void Update()
+        /*void Update()
 		{
 			if (lastFrameId == Time.frameCount)
 				return;
@@ -122,13 +123,51 @@ namespace ScratchCardAsset
 			}
 
 			lastFrameId = Time.frameCount;
-		}
+		}*/
 
-		#endregion
+        void Update()
+        {
+            // 🔥 Reset hit state every frame
+            HasScratchHit = false;
 
-		#region Initializaion
+            if (lastFrameId == Time.frameCount)
+                return;
 
-		private void Init()
+            cardInput.Update();
+
+            if (isFirstFrame)
+            {
+                cardRenderer.FillRenderTextureWithColor(Color.clear);
+                isFirstFrame = false;
+            }
+
+            if (cardInput.IsScratching)
+            {
+                cardInput.Scratch();
+            }
+
+            // 🔥 VFX control lives HERE (stable)
+            if (activeGun != null)
+            {
+                if (IsScratching && HasScratchHit)
+                {
+                    activeGun.OnScratch();
+                }
+                else
+                {
+                    activeGun.OnScratchStopedDelayed();
+                }
+            }
+
+            lastFrameId = Time.frameCount;
+        }
+
+
+        #endregion
+
+        #region Initializaion
+
+        private void Init()
 		{
 			GetScratchBounds();
 			InitVariables();
@@ -186,7 +225,9 @@ namespace ScratchCardAsset
 		private void InitVariables()
 		{
 			cardInput = new ScratchCardInput(this);
-			cardInput.OnScratchStart -= OnScratchStart;
+
+
+            cardInput.OnScratchStart -= OnScratchStart;
 			cardInput.OnScratchStart += OnScratchStart;
 			cardInput.OnScratchHole -= OnScratchHole;
 			cardInput.OnScratchHole += OnScratchHole;
@@ -223,6 +264,7 @@ namespace ScratchCardAsset
 		private void OnScratchStart()
 		{
 			cardRenderer.IsScratched = false;
+			
 		}
 
 		private void OnScratchHole(Vector2 position)
@@ -234,11 +276,7 @@ namespace ScratchCardAsset
 		{
 			cardRenderer.ScratchLine(start, end);
 		}
-        [Header("Laser Scratch")]
-        [SerializeField] private Transform gunTip;
-        [SerializeField] private float laserDistance = 15f;
-        [SerializeField] private LayerMask scratchLayer;
-        [SerializeField] private bool debugLaser = true;
+
         /*  public Vector2 GetScratchPosition(Vector2 position)
           {
               var scratchPosition = Vector2.zero;
@@ -268,32 +306,32 @@ namespace ScratchCardAsset
 
               return scratchPosition;
           }*/
+
+		MATS_GunManager activeGun => MATS_GameManager.Instance.activeGun;
         public Vector2 GetScratchPosition(Vector2 _)
         {
-            RaycastHit2D hit = Physics2D.Raycast(
-                gunTip.position,
-                gunTip.up,
-                laserDistance,
-                scratchLayer
-            );
+            // Default: no hit this frame
+            HasScratchHit = false;
 
-            if (debugLaser)
-            {
-                Debug.DrawRay(
-                    gunTip.position,
-                    gunTip.up * laserDistance,
-                    hit ? Color.green : Color.red
-                );
-            }
+            if (activeGun == null)
+                return Vector2.zero;
+
+            RaycastHit2D hit = Physics2D.Raycast(
+                activeGun.gunTip.position,
+                activeGun.gunTip.up,
+                activeGun.laserDistance,
+                activeGun.scratchLayer
+            );
 
             if (!hit)
                 return Vector2.zero;
 
-            // Convert hit world position → screen position
-            Vector2 screenPos = MainCamera.WorldToScreenPoint(hit.point);
+            // ✅ Cache hit info for Update()
+            HasScratchHit = true;
+            LastScratchWorldPoint = hit.point;
 
-            // === ORIGINAL LOGIC (UNCHANGED) ===
-            var scratchPosition = Vector2.zero;
+            Vector2 screenPos = MainCamera.WorldToScreenPoint(hit.point);
+            Vector2 scratchPosition = Vector2.zero;
 
             if (MainCamera.orthographic || isCanvasOverlay)
             {
@@ -327,6 +365,7 @@ namespace ScratchCardAsset
                     var point = ray.GetPoint(enter);
                     var pointLocal = Surface.InverseTransformPoint(point);
                     var uv = triangle.GetUV(pointLocal);
+
                     scratchPosition = new Vector2(
                         uv.x * imageSize.x,
                         uv.y * imageSize.y
@@ -336,6 +375,7 @@ namespace ScratchCardAsset
 
             return scratchPosition;
         }
+
 
 
         #region Public Methods

@@ -51,6 +51,10 @@ public class MATS_LevelInitials : MATS_LevelTask
         levelAvatar.SetActive(false);
         initialCar.SetActive(false);
         yield return new WaitForSeconds(1.8f);
+        for(int i=1;i< MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks.Length;i++)
+        {
+            MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[i].gameObject.SetActive(true);
+        }
         MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[0].gameObject.SetActive(false);
         StopCoroutine(moveRoutine);
     }

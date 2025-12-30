@@ -48,7 +48,21 @@ namespace ScratchCardAsset
 
 		void Update()
 		{
-			if (Card.Mode != scratchMode)
+			if (!isCompleted)
+			{
+                if (scratchTimer > 0f)
+                {
+                    scratchTimer -= Time.deltaTime;
+					
+                    IsActuallyScratching = true;
+                }
+                else
+                {
+                   
+                        IsActuallyScratching = false;
+                }
+            }
+            if (Card.Mode != scratchMode)
 			{
 				scratchMode = Card.Mode;
 				ResetProgress();
@@ -71,10 +85,20 @@ namespace ScratchCardAsset
 			mesh = MeshGenerator.GenerateQuad(Vector3.one, Vector3.zero);
 		}
 
-		/// <summary>
-		/// Calculates scratch progress
-		/// </summary>
-		private void CalcProgress()
+        /// <summary>
+        /// Calculates scratch progress
+        /// </summary>
+        /// 
+        public float lastProgressValue = -1f;
+        public float ProgressEpsilon = 0.0005f;
+        public float delta = 0.0005f;
+        [SerializeField] private float scratchHoldTime = 0.12f;
+
+        private float scratchTimer;
+        public bool IsActuallyScratching { get; private set; }
+
+        public bool IsProgressChanging { get; private set; }
+        private void CalcProgress()
 		{
 			if (!isCompleted)
 			{
@@ -87,8 +111,16 @@ namespace ScratchCardAsset
 				progressTexture.Apply();
 				RenderTexture.active = prevRenderTextureT;
 				var red = progressTexture.GetPixel(0, 0).r;
-				currentProgress = red;
-				if (OnProgress != null)
+                 delta = Mathf.Abs(red - lastProgressValue);
+
+                IsProgressChanging = delta > ProgressEpsilon;
+
+                lastProgressValue = red;
+                currentProgress = red;
+
+
+
+                if (OnProgress != null)
 				{
 					OnProgress(red);
 				}
