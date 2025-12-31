@@ -10,6 +10,11 @@ public class MATS_UIManager : MonoBehaviour
     public Material fadeInScreenMat;
     public Material fadeOutScreenMat;
 
+    [Header("Completion Particles")]
+    public ParticleSystem levelCompleteParticles;
+    public ParticleSystem taskCompleteParticles;
+
+
     private void Awake()
     {
         if(instance == null)

@@ -12,10 +12,7 @@ public class MATS_LevelStart : MATS_LevelTask
     [SerializeField] GameObject levelAvatar;
     [SerializeField] GameObject playerVehicleBody,rareTire,frontTire;
 
-    [Header("Movement")]
-    [SerializeField] private float minY = 1.64f;
-    [SerializeField] private float maxY = 1.65f;
-    [SerializeField] private float moveSpeed = 1.5f;
+    
 
     [Header ("Cleaning")]
     [Space(10)]
@@ -55,14 +52,14 @@ public class MATS_LevelStart : MATS_LevelTask
         playerVehicleBody.transform.parent.GetComponent<Animator>().enabled = false;*/
         userClicked = false;
 
-        // Start movement coroutine
-        Coroutine moveRoutine = StartCoroutine(MoveAvatar());
+      
 
         if(taskName== "MudRemoval")
         {
             MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[1].gameObject.SetActive(true);
             DelayActive(waterGun,0.6f);
             soapGun.SetActive(false);
+            StartCoroutine(MATS_LevelManager.Instance.levels[0].MoveAvatar(mainCarObject.transform.parent));
         }
         else if(taskName == "Soap")
         {
@@ -70,19 +67,33 @@ public class MATS_LevelStart : MATS_LevelTask
             DelayActive(soapGun, 0.6f);
             waterGun.SetActive(false);
         }
+        else if (taskName == "WashSoap")
+        {
+            MATS_LevelManager.Instance.levels[0].GetComponent<MATS_LevelData>().tasks[3].gameObject.SetActive(true);
+            DelayActive(waterGun, 0.6f);
+            soapGun.SetActive(false);
+     
+        }
 
-        Coroutine moveRoutine1 = StartCoroutine(UpdateProgress());
+        
+
+        StartCoroutine(UpdateProgress());
 
 
         // WAIT until user clicks button
           yield return new WaitUntil(() => isRemovingMudComplete);
-       this.gameObject.SetActive(false);
-        
-        // Stop movement
-        StopCoroutine(moveRoutine);
+        if(MATS_GameManager.Instance.activeGun != null)
+        {
+            MATS_GameManager.Instance.activeGun.OnScratchStopedDelayed();
+        }
+        yield return new WaitForSeconds(1f);
+        mainCarObject.SetActive(false);
+        MATS_UIManager.instance.taskCompleteParticles.Play();
+
 
 
         yield return new WaitForSeconds(2f);
+        this.gameObject.SetActive(false);
         MATS_Debug.Log("Wash Task Finished: " + taskName);
     }
     private IEnumerator UpdateProgress()
@@ -153,7 +164,7 @@ public class MATS_LevelStart : MATS_LevelTask
         SpriteRenderer sr = part.GetComponent<SpriteRenderer>();
 
         StartCoroutine(
-            TweenFloat(1f, 0f, 1.5f, value =>
+            TweenFloat(1f, 0f, 1f, value =>
             {
                 Color c = sr.color;
                 c.a = value;
@@ -162,27 +173,7 @@ public class MATS_LevelStart : MATS_LevelTask
         );
     }
 
-    private IEnumerator MoveAvatar()
-    {
-
-         
-        MATS_Debug.Log("Moving the avatar   xxxxx");
-        Transform t = playerVehicleBody.transform;
-        float midY = (minY + maxY) / 2f;
-        float amplitude = (maxY - minY) / 2f;
-        float time = 0f;
-
-        while (true)
-        {
-            time += Time.deltaTime * moveSpeed;
-            float newY = midY + Mathf.Sin(time) * amplitude;
-            Vector3 pos = t.position;
-            pos.y = newY;
-            t.position = pos;
-
-            yield return null;
-        }
-    }
+  
 
     // 🔘 CALL THIS FROM UI BUTTON
     public void OnUserClick()
