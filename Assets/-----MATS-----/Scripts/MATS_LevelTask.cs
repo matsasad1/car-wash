@@ -10,6 +10,7 @@ public abstract class MATS_LevelTask : MonoBehaviour
     public bool canFail;
     public bool isOptional;
 
+
     [Header("Runtime State (Read Only)")]
     [SerializeField] private TaskState _state = TaskState.Idle;
     [SerializeField] private bool _isCurrentTask;
